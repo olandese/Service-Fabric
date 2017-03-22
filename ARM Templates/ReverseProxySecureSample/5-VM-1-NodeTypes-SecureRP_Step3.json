@@ -212,7 +212,8 @@
     "lbHttpProbeID0": "[concat(variables('lbID0'),'/probes/FabricHttpGatewayProbe')]",
     "lbNatPoolID0": "[concat(variables('lbID0'),'/inboundNatPools/LoadBalancerBEAddressNatPool')]",
     "vmNodeType0Name": "[toLower(concat('NT1', variables('vmName')))]",
-    "vmNodeType0Size": "Standard_DS2_v2"
+    "vmNodeType0Size": "Standard_DS2_v2",
+    "splitter": "|"
   },
   "resources": [
     {
@@ -575,6 +576,23 @@
                   },
                   "typeHandlerVersion": "1.5"
                 }
+              },
+                            {
+                "name": "customScript",
+                "properties": {
+                  "publisher": "Microsoft.Compute",
+                  "settings": {
+                    "fileUris": [
+                      "https://raw.githubusercontent.com/olandese/Service-Fabric/EnecoTest/ARM%20Templates/ReverseProxySecureSample/setenvironment.ps1"
+                    ]
+                  },
+                  "typeHandlerVersion": "1.8",
+                  "autoUpgradeMinorVersion": true,
+                  "protectedSettings": {
+                    "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File setenvironment.ps1 -keyvaluepairs ', '\"', 'thumbprintcluster=', parameters('clusterCertificateThumbprint'), variables('splitter'), 'thumbprintproxy=',parameters('sfReverseProxyCertificateThumbprint'), '\"'  )]"
+                  },
+                  "type": "CustomScriptExtension"
+                }
               }
             ]
           },
@@ -721,7 +739,7 @@
           }
         ],
         "provisioningState": "Default",
-        "reliabilityLevel": "Silver",
+        "reliabilityLevel": "Bronze",
         "upgradeMode": "Automatic",
         "vmImage": "Windows"
       },

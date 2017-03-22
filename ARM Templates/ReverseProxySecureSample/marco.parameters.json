@@ -6,7 +6,7 @@
       "value": "westeurope"
     },
     "clusterName": {
-      "value": "marcosfcluster12"
+      "value": "marcosfcluster13"
     },
     "adminUserName": {
       "value": "admuser"
@@ -36,22 +36,22 @@
       "value": "My"
     },
     "clusterCertificateThumbprint": {
-      "value": "B7B74C7D51B23EA8F91B7C9D9124FD2447B5D6C9"
+      "value": "EF8028CA4CF06C090754E0431CA311A1E3E3F836"
     },
     "sourceVaultvalue": {
       "value": "/subscriptions/047ac885-a2f8-4f3d-8e17-04646a704e7e/resourceGroups/ecsaz-bdp-config/providers/Microsoft.KeyVault/vaults/ecsaz-bdp-vault-d"
     },
     "clusterCertificateUrlvalue": {
-      "value": "https://ecsaz-bdp-vault-d.vault.azure.net:443/secrets/marcosfcluster12/853249d3e9bc45e49e846999cb708af4"
+      "value": "https://ecsaz-bdp-vault-d.vault.azure.net:443/secrets/marcosfcluster/9f20e100b0ef4d889ef01721df20937e"
     },
     "sfReverseProxyCertificateStorevalue": {
       "value": "My"
     },
     "sfReverseProxyCertificateThumbprint": {
-      "value": "065CCBCDF309AFC15A2F3B8559570B692B52AE96"
+      "value": "080D75556FC900D23111B35642FCFD5C7EF9CC00"
     },
     "sfReverseProxyCertificateUrlvalue": {
-      "value": "https://ecsaz-bdp-vault-d.vault.azure.net:443/secrets/marcosfcluster12rp/71b066a44e0a4028976657144f86414d"
+      "value": "https://ecsaz-bdp-vault-d.vault.azure.net:443/secrets/marcosfclusterrp/93029a81663f48abaab1991b02908441"
     },
     "clusterProtectionLevel": {
       "value": "EncryptAndSign"
